@@ -1,15 +1,24 @@
-# 公式ワークブック SORACOM実装ガイド 第三章
-## SORACOM LTE-M Button Plus を自動的に押すためのサンプルプログラム
+# 公式ワークブック SORACOM実装ガイド 第３部
+## 第一章 動態管理 - 簡易トラッキング
+**SORACOM LTE-M Button Plus を自動的に押すためのサンプルプログラム**
 
+## 用意するもの
+
+- [M5Stick-C](https://docs.m5stack.com/#/ja/core/m5stickc)
+- [リレーユニット](https://docs.m5stack.com/#/ja/unit/relay)
+- [SORACOM LTE-M Button Plus](https://soracom.jp/products/gadgets/button_plus/)
 
 ![M5Stick-Cとリレーユニット](img/m5stickc_relay.jpg)
 
 ## 使い方
-- [M5stick-C 用のスケッチ](auto-push/auto-push.ino) を Arduino IDE などで M5Stick-C に書き込みます
+- [M5stick-C 用のスケッチ](auto-push/auto-push.ino) を Arduino IDE で M5Stick-C に書き込みます
+- LTE-M Button と リレーユニットを接続します (ドライバーでケーブルを固定)
+- リレーユニットを M5Stick-C に接続します
+
+デフォルトでは、１分に１度、リレーが動作してボタンを押したのと同じ動作となります。
 
 
-
-# Appendix
+# おまけ
 HAT 用端子に下記のような回路を接続すると、より小型の回路でスイッチングできます。
 
 ```
@@ -30,6 +39,10 @@ HAT 用端子に下記のような回路を接続すると、より小型の回�
 |          |   |               |
 ```
 
+![フォトカプラーを使った回路](img/m5stickc_photocoupler.jpg)
+
 ## パーツリスト
+- ユニバーサル基板
 - フォトカプラ TLP222AF
 - カーボン抵抗 1/6W 200Ω
+- 2.54mm ピッチコネクタキット（ベース付ポスト ハウジング コンタクトピン）
