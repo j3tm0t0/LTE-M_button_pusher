@@ -1,12 +1,12 @@
 #include <M5StickC.h>
 
-#define INTERVAL 60000
+#define BRIGHTNESS 0x0f // 0x07 (Darkest) - 0x0f (Brightest), darker = longer battery life
 
 #define BTN_A_PIN 37
 #define BTN_B_PIN 39
 #define LED_PIN   10
-#define GPIO_PIN 26
-#define GROVE_PIN 32
+#define GROVE_PIN 32  // for Unit RELAY https://docs.m5stack.com/#/en/unit/relay
+#define GPIO_PIN 26   // for HAT I/F
 
 #define BTN_ON  LOW
 #define BTN_OFF HIGH
@@ -21,10 +21,8 @@
 #define DOUBLE_THRESHOLD  (1000)
 #define LONG_THRESHOLD  (2000)
 
-#define BRIGHTNESS 0x0f
-
 int interval=0;
-int intervals[]={1,5,60,60*24};
+int intervals[]={1,5,60,60*24}; // 1 min / 5 min / 1 hour / 1 day
 
 char *click_types[]={"","SINGLE CLICK!  ","DOUBLE CLICK!!","LONG CLICK!!!       "};
 
